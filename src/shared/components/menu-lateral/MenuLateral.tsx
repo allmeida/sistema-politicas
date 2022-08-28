@@ -1,4 +1,4 @@
-import { Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from '@mui/material';
+import { Divider, Drawer, Icon, List, ListItemButton, ListItemIcon, ListItemText, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 import { ReactNode } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
@@ -42,9 +42,12 @@ export const MenuLateral = ({ children }: {children:ReactNode}) => {
     <>
       <Drawer open={isDrawerOpen} variant={smDown ? 'temporary' : 'permanent'} onClose={toggleDrawerOpen}>
         <Box width={theme.spacing(28)} height="100%" display="flex" flexDirection="column">
-          <Box width="100%" height={theme.spacing(4)} display="flex" alignItems="center" justifyContent="center">
+          <Box width="100%" height={theme.spacing(8)} display="flex" alignItems="center" justifyContent="center">
+            
             <Box>
-              Modulo do Sistema
+              <Typography variant='h6'>
+                Modulo do Sistema
+              </Typography>
             </Box>
           </Box>
           <Divider />
