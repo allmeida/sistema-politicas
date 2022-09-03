@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { Icon, IconButton, Theme, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Box } from '@mui/system';
 
@@ -6,11 +5,10 @@ import { useDrawerContext } from '../contexts';
 
 interface ILayoutBaseDePaginaProps {
   titulo: string;
-  barrasDeFerramentas: ReactNode;
   children?: React.ReactNode;
 }
 
-export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ children, titulo, barrasDeFerramentas}) => {
+export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ children, titulo}) => {
   const smDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'));
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const theme = useTheme();
@@ -36,9 +34,6 @@ export const LayoutBaseDePagina: React.FC<ILayoutBaseDePaginaProps> = ({ childre
           {titulo}
         </Typography>
       </Box>
-      {barrasDeFerramentas && (<Box>
-        {barrasDeFerramentas}
-      </Box>)}
       <Box flex={1} overflow="auto">
         {children}
       </Box>
