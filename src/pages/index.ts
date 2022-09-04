@@ -1,4 +1,4 @@
 export * from './dashboard/Dashboard';
-export * from './upload-arquivo/UploadArquivo';
+export * from './upload-arquivo';
 export * from './relatorio/Relatorio';
 export * from './politicas/Politica';
