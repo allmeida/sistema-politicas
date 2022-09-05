@@ -7,14 +7,6 @@ const Wrapper = styled.div`
   padding: 1rem;
 `;
 
-const Titulo = styled.h1`
-  color: #000;
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  font-weight: 500;
-`;
-
 const CaixaUpload = styled.div`
   & p {
     color: #bcb6b6;
@@ -41,4 +33,4 @@ const CaixaUpload = styled.div`
   }
 `;
 
-export { Wrapper, Titulo, CaixaUpload };
+export { Wrapper, CaixaUpload };

@@ -14,7 +14,6 @@ import {
 import { useState } from 'react';
 import { LayoutBaseDePagina } from '../../shared/layouts';
 import FormularioPolitica from './FormularioPolitica';
-import CreateModal from './Modal';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -43,7 +42,7 @@ export const Politica: React.FC = () => {
     setOpen(true);
   };
 
-  const fechar = () => {
+  const close = () => {
     setOpen(false);
   };
 
@@ -59,7 +58,7 @@ export const Politica: React.FC = () => {
           <Button variant="contained" onClick={handleShowModal}>
             CADASTRAR POLITICA DE ESTOQUE
           </Button>
-          <FormularioPolitica open={open} fechar={fechar} />
+          <FormularioPolitica open={open} close={close} />
         </Box>
       </Box>
 

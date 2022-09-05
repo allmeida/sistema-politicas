@@ -1,6 +1,6 @@
 import { Button, Grid, Modal, TextField } from '@mui/material';
 import Box from '@mui/material/Box';
-import React from 'react';
+import React, { useState } from 'react';
 
 const style = {
   position: 'absolute',
@@ -16,12 +16,22 @@ const style = {
 
 interface Props {
   open: boolean;
-  fechar(): void;
+  close(): void;
 }
 
 const FormularioPolitica: React.FC<Props> = (props) => {
+  const [fields, setFields] = useState({
+    otimo: 0,
+    bom: 0,
+    critico: 0,
+  });
+
+  const changeField = (nameField: string, value: unknown) => {
+    setFields({ ...fields, [nameField]: value });
+  };
+
   const handleClose = () => {
-    props.fechar();
+    props.close();
   };
 
   return (
@@ -34,12 +44,17 @@ const FormularioPolitica: React.FC<Props> = (props) => {
       >
         <Box sx={style}>
           <Grid container spacing={2}>
+            {JSON.stringify(fields)}
             <Grid item xs={12}>
               <TextField
                 fullWidth
                 required
                 id="outlined-required"
                 label="Ótimo"
+                value={fields.otimo}
+                onChange={function (event) {
+                  changeField('otimo', event.target.value);
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -48,6 +63,10 @@ const FormularioPolitica: React.FC<Props> = (props) => {
                 required
                 id="outlined-required"
                 label="Bom"
+                value={fields.bom}
+                onChange={function (event) {
+                  changeField('bom', event.target.value);
+                }}
               />
             </Grid>
             <Grid item xs={12}>
@@ -56,6 +75,10 @@ const FormularioPolitica: React.FC<Props> = (props) => {
                 required
                 id="outlined-required"
                 label="Crítico"
+                value={fields.critico}
+                onChange={function (event) {
+                  changeField('critico', event.target.value);
+                }}
               />
             </Grid>
             <Grid

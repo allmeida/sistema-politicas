@@ -1,12 +1,11 @@
-import { Box, Button, Typography } from '@mui/material';
+import { Button } from '@mui/material';
 import { LayoutBaseDePagina } from '../../shared/layouts';
-import { Wrapper, Titulo, CaixaUpload } from './styles';
+import { Wrapper, CaixaUpload } from './styles';
 
 export const UploadArquivo: React.FC = () => {
   return (
     <LayoutBaseDePagina titulo="Upload de arquivo">
       <Wrapper>
-        <Titulo>Upload do Arquivo</Titulo>
         <CaixaUpload>
           <p>Estoque Principal</p>
           <label htmlFor="arquivo">Click para fazer upload</label>
@@ -24,3 +23,5 @@ export const UploadArquivo: React.FC = () => {
     </LayoutBaseDePagina>
   );
 };
+
+export default UploadArquivo;
